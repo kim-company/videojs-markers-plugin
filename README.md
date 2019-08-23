@@ -1,15 +1,14 @@
-## Not actively maintained anymore. 
+## Forked from https://github.com/spchuang/videojs-markers for 1.0.2 NPM release
+## Not actively maintained
 
-Video.js Markers
+Video.js Markers Plugin - works with Video.js 7.6
 ===================
 ![Alt text](https://raw.github.com/fealaer/videojs-markers-plugin/master/screenshot.png "Screen shot of videojs.markers.plugin")
 
 A plugin that displays customizable markers upon progress bars of the video with [Video.js](https://github.com/videojs/video.js/). This could be used to show video breaks and show overlaid text on the video when playback reaches the specific break point.
 
 ## Demo and Documentation
-See [here](http://www.sampingchuang.com/videojs-markers)
-
-JSBin Demo can be found [here](http://jsbin.com/vifilen/1/edit)
+JSBin Demo can be found [here](https://codepen.io/fealaer/pen/RwbKeye)
 
 ## Features
 * Display markers on progress bar, with hover-over tooltips
@@ -19,11 +18,13 @@ JSBin Demo can be found [here](http://jsbin.com/vifilen/1/edit)
 
 ## Download
 
+* Install as npm - `yarn add videojs-markers-plugin` or `npm install videojs-markers-plugin`
+* Install as bower package -- `bower install videojs-markers-plugin`
+
+## Download
+
 * Download master with git -- `git clone git@github.com:fealaer/videojs-markers-plugin.git`
-
 * Download zip/tar files for newest release
-* Download through bower -- `bower install videojs-markers-plugin`
-
 
 ## Quick Start
 Add the 'videojs.markers.plugin.js' plugin and stylesheet after including videojs script
@@ -77,8 +78,10 @@ The style of the markers could be modified by passing an optional setting "marke
 > grunt compile
 ```
 
-
 ## History
+- 1.0.2
+   - Fix deprecation warnings for latest version of Video.js (6.8.x)
+   - Allow html to be specified for markerTip
 - 1.0.1
    - fix /dist missing issue (issue 81)
 - 1.0.0
@@ -105,7 +108,6 @@ The style of the markers could be modified by passing an optional setting "marke
    - Add many markers APIs for adding and removing markers dynamically.
 - 0.1
    - initial release
-
 
 ## License
 This project is licensed under MIT.
