@@ -1,5 +1,5 @@
 /*
- * videojs-markers
+ * videojs-markers-plugin
  * @flow
  */
 

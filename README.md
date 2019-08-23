@@ -2,7 +2,7 @@
 
 Video.js Markers
 ===================
-![Alt text](https://raw.github.com/spchuang/videojs-markers/master/screenshot.png "Screen shot of videojs.markers")
+![Alt text](https://raw.github.com/fealaer/videojs-markers-plugin/master/screenshot.png "Screen shot of videojs.markers.plugin")
 
 A plugin that displays customizable markers upon progress bars of the video with [Video.js](https://github.com/videojs/video.js/). This could be used to show video breaks and show overlaid text on the video when playback reaches the specific break point.
 
@@ -19,19 +19,19 @@ JSBin Demo can be found [here](http://jsbin.com/vifilen/1/edit)
 
 ## Download
 
-* Download master with git -- `git clone git@github.com:spchuang/videojs-markers.git`
+* Download master with git -- `git clone git@github.com:fealaer/videojs-markers-plugin.git`
 
 * Download zip/tar files for newest release
-* Download through bower -- `bower install videojs-markers`
+* Download through bower -- `bower install videojs-markers-plugin`
 
 
 ## Quick Start
-Add the 'videojs.markers.js' plugin and stylesheet after including videojs script
+Add the 'videojs.markers.plugin.js' plugin and stylesheet after including videojs script
 
     <link href="http://vjs.zencdn.net/4.2/video-js.css" rel="stylesheet">
-    <link href="videojs.markers.css" rel="stylesheet">
+    <link href="videojs.markers.plugin.css" rel="stylesheet">
     <script src="http://vjs.zencdn.net/4.2/video.js"></script>
-    <script src='../src/videojs.markers.js'></script>
+    <script src='../src/videojs.markers.plugin.js'></script>
 
 ### Basic usage: display break markers in the video.
 To add breaks in the video, simply add a new time (in seconds) in the list of breaks option.
@@ -67,8 +67,8 @@ The style of the markers could be modified by passing an optional setting "marke
 
 ## Development
 ```
-> git clone https://github.com/spchuang/videojs-markers
-> cd videojs-markers
+> git clone https://github.com/fealaer/videojs-markers-plugin
+> cd videojs-markers-plugin
 > npm install
 
 // compile js/css assets

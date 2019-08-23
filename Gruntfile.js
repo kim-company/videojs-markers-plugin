@@ -23,7 +23,7 @@ module.exports = function(grunt) {
       less: {
          build: {
             files: {
-               'dist/videojs.markers.css': 'src/videojs.markers.less'
+               'dist/videojs.markers.plugin.css': 'src/videojs.markers.plugin.less'
             }
          },
       },
@@ -34,7 +34,7 @@ module.exports = function(grunt) {
          },
          build: {
             files: {
-               'dist/videojs.markers.min.css': 'dist/videojs.markers.css'
+               'dist/videojs.markers.plugin.min.css': 'dist/videojs.markers.plugin.css'
             }
          }
       },
