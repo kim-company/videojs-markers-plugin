@@ -8,11 +8,11 @@
       exports: {}
     };
     factory(global.videojs);
-    global.videojsMarkers = mod.exports;
+    global.videojsMarkersPlugin = mod.exports;
   }
 })(this, function (_video) {
-  /*! videojs-markers - v1.0.1 - 2018-10-31
-  * Copyright (c) 2018 ; Licensed  */
+  /*! videojs-markers-plugin - v1.0.2 - 2019-08-23
+  * Copyright (c) 2019 ; Licensed  */
   'use strict';
 
   var _video2 = _interopRequireDefault(_video);
@@ -518,4 +518,4 @@
 
   _video2.default.registerPlugin('markers', registerVideoJsMarkersPlugin);
 });
-//# sourceMappingURL=videojs-markers.js.map
+//# sourceMappingURL=videojs-markers-plugin.js.map
