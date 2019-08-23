@@ -1,0 +1,8 @@
+/demo
+/src
+.flowconfig
+.gitignore
+.npmignore
+bower.json
+Gruntfile.js
+*.png
