@@ -192,6 +192,7 @@ function registerVideoJsMarkersPlugin(options) {
 
     // set position
     markerDiv.style.left = getPosition(marker) + '%';
+    console.log("Position: " + getPosition(marker));
     if (marker.duration) {
       markerDiv.style.width = (marker.duration / player.duration()) * 100 + '%';
       markerDiv.style.marginLeft = '0px';
