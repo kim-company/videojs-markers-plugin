@@ -11,8 +11,8 @@
     global.videojsMarkersPlugin = mod.exports;
   }
 })(this, function (_video) {
-  /*! videojs-markers-plugin - v1.0.2 - 2019-08-23
-  * Copyright (c) 2019 ; Licensed  */
+  /*! videojs-markers-plugin - v1.0.2 - 2023-03-10
+  * Copyright (c) 2023 ; Licensed  */
   'use strict';
 
   var _video2 = _interopRequireDefault(_video);
@@ -302,7 +302,43 @@
           markerTip.style.left = getPosition(marker) + '%';
           var markerTipBounding = getElementBounding(markerTip);
           var markerDivBounding = getElementBounding(markerDiv);
-          markerTip.style.marginLeft = -parseFloat(markerTipBounding.width / 2) + parseFloat(markerDivBounding.width / 4) + 'px';
+
+          // Set dynamically the marker layout to prevent cutted off text elements
+          var arrayElem = markerTip.querySelector('.vjs-tip-arrow');
+          var tipInnerElem = markerTip.querySelector('.vjs-tip-inner');
+          var tipDivWidth = parseInt(getComputedStyle(tipInnerElem).maxWidth);
+
+          if (markerDivBounding.left < tipDivWidth) {
+            markerTip.style.left = '0px';
+            markerTip.style.right = 'unset';
+            markerTip.style.marginLeft = '0px';
+
+            // Move the little arrow accordingly the position
+            var markerDivLeft = parseInt(getComputedStyle(markerDiv).left);
+            var arrowElemWidth = parseInt(getComputedStyle(arrayElem).width);
+            arrayElem.style.left = arrowElemWidth / (markerDivLeft < 5 ? 1 : 2) + markerDivLeft - (markerDivLeft < 5 ? 0 : 1) + 'px';
+            arrayElem.style.right = 'unset';
+          } else if (markerDivBounding.left > window.innerWidth - tipDivWidth - 2 * 20) {
+            // we are probably at the end of the timeline
+            markerTip.style.left = 'unset';
+            markerTip.style.right = '0px';
+
+            // Move the little arrow accordingly the position
+            var _markerDivLeft = parseInt(getComputedStyle(markerDiv).left);
+            var arrayElemWidth = parseInt(getComputedStyle(arrayElem).width);
+            var rightPos = window.innerWidth - _markerDivLeft - 2 * 20 - 2 * arrayElemWidth + 2;
+            arrayElem.style.left = 'unset';
+            arrayElem.style.right = (rightPos < 5 ? 5 : rightPos) + 'px';
+          } else {
+            arrayElem.style.left = '50%';
+            arrayElem.style.right = 'unset';
+            markerTip.style.right = 'unset';
+            markerTip.style.left = getPosition(marker) + '%';
+            markerTipBounding = getElementBounding(markerTip);
+            markerDivBounding = getElementBounding(markerDiv);
+            markerTip.style.marginLeft = -parseFloat(markerTipBounding.width / 2) + parseFloat(markerDivBounding.width / 4) + 'px';
+          }
+
           markerTip.style.visibility = 'visible';
         }
       });
