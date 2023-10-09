@@ -11,7 +11,7 @@
     global.videojsMarkersPlugin = mod.exports;
   }
 })(this, function (_video) {
-  /*! videojs-markers-plugin - v1.0.2 - 2023-03-10
+  /*! videojs-markers-plugin - v1.0.2 - 2023-10-09
   * Copyright (c) 2023 ; Licensed  */
   'use strict';
 
@@ -306,7 +306,7 @@
           // Set dynamically the marker layout to prevent cutted off text elements
           var arrayElem = markerTip.querySelector('.vjs-tip-arrow');
           var tipInnerElem = markerTip.querySelector('.vjs-tip-inner');
-          var tipDivWidth = parseInt(getComputedStyle(tipInnerElem).maxWidth);
+          var tipDivWidth = parseInt(getComputedStyle(tipInnerElem).width);
 
           if (markerDivBounding.left < tipDivWidth) {
             markerTip.style.left = '0px';

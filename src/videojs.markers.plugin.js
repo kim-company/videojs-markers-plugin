@@ -295,7 +295,7 @@ function registerVideoJsMarkersPlugin(options) {
         // Set dynamically the marker layout to prevent cutted off text elements
         const arrayElem = markerTip.querySelector('.vjs-tip-arrow');
         const tipInnerElem = markerTip.querySelector('.vjs-tip-inner');
-        const tipDivWidth = parseInt(getComputedStyle(tipInnerElem).maxWidth); 
+        const tipDivWidth = parseInt(getComputedStyle(tipInnerElem).width); 
 
         if (markerDivBounding.left < tipDivWidth) {
           markerTip.style.left = '0px';
